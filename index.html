@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to TaskSnap</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="manifest" href="/manifest.json">
+</head>
+<body class="bg-gray-50 flex items-center justify-center h-screen font-sans">
+
+    <div class="w-full max-w-md p-8 space-y-8 bg-white rounded-2xl shadow-lg text-center">
+        <div>
+            <h1 class="text-4xl font-bold text-gray-800">Welcome to TaskSnap</h1>
+            <p class="mt-2 text-gray-600">Let's get you started.</p>
+        </div>
+
+        <form id="welcome-form" class="space-y-6">
+            <div class="flex flex-col items-center space-y-4">
+                <label for="profile-upload" class="cursor-pointer">
+                    <img id="profile-preview" src="https://i.pravatar.cc/150?u=a042581f4e29026704d" alt="Profile Preview" class="w-32 h-32 rounded-full object-cover border-4 border-gray-200 hover:border-blue-500 transition-all duration-300">
+                </label>
+                <input type="file" id="profile-upload" class="hidden" accept="image/*">
+                <p class="text-sm text-gray-500">Tap the image to upload a picture</p>
+            </div>
+
+            <div>
+                <label for="username" class="sr-only">Username</label>
+                <input id="username" name="username" type="text" required class="appearance-none rounded-lg relative block w-full px-4 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" placeholder="Enter your name">
+            </div>
+
+            <div>
+                <button type="submit" class="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-transform transform hover:scale-105">
+                    Get Started
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <script src="js/auth.js"></script>
+</body>
+</html>

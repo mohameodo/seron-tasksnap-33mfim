@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskSnap</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/qrcode.min.js"></script>
+    <link rel="manifest" href="/manifest.json">
+</head>
+<body class="bg-gray-50 font-sans antialiased text-gray-800">
+
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="fixed inset-0 bg-white flex flex-col items-center justify-center z-50 transition-opacity duration-500">
+        <img id="loading-pfp" src="" alt="Profile" class="w-24 h-24 rounded-full object-cover mb-4 shadow-lg">
+        <h2 id="loading-name" class="text-2xl font-bold text-gray-700"></h2>
+        <div class="loader mt-4"></div>
+    </div>
+
+    <div class="flex h-screen bg-gray-100">
+        <!-- Desktop Sidebar -->
+        <aside class="hidden md:flex flex-col w-64 bg-white border-r border-gray-200 p-4 transition-all duration-300">
+            <div class="flex items-center mb-8">
+                <i class="fas fa-check-double text-3xl text-blue-600"></i>
+                <h1 class="text-2xl font-bold ml-3">TaskSnap</h1>
+            </div>
+            <nav id="desktop-nav" class="flex flex-col space-y-2"></nav>
+            <div class="mt-auto">
+                <a href="#profile" class="flex items-center p-3 rounded-lg hover:bg-gray-100 transition-colors duration-200 nav-link" data-page="profile">
+                    <img id="sidebar-pfp" src="" alt="Profile" class="w-10 h-10 rounded-full object-cover">
+                    <span id="sidebar-username" class="ml-3 font-medium"></span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 flex flex-col overflow-hidden">
+            <div id="app-content" class="flex-1 overflow-y-auto p-4 md:p-8"></div>
+        </main>
+    </div>
+
+    <!-- Mobile Bottom Navigation -->
+    <nav id="mobile-nav" class="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 flex justify-around p-2 z-40"></nav>
+
+    <!-- Modals Container -->
+    <div id="modal-container"></div>
+    
+    <div id="seron-pill" class="fixed bottom-20 right-4 md:bottom-4 md:right-4 bg-black text-white text-xs font-bold py-1 px-3 rounded-full shadow-lg hover:bg-gray-800 transition-colors">
+        <a href="https://seron.dev" target="_blank">Made by Seron</a>
+    </div>
+
+    <script src="js/ui.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
